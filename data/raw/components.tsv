@@ -1,0 +1,5 @@
+component_id	name	role	smiles	smiles_status	source	notes
+LNK_001	Example linker	linker		not_added	internal	Replace with the actual structure
+NHS_001	Example NHS ester	NHS_ester		not_added	internal	Used for amine coupling
+CLK_001	Example click reagent	click_reagent		not_added	internal	Used for click conjugation
+MOD_001	Example modified nucleotide	nucleotide_modification		not_added	internal	Needs manual structure verification
