@@ -1,4 +1,4 @@
-# AZB_001 — 4-azidobutanoic acid
+# AZB — 4-azidobutanoic acid
 
 1. **Name IUPAC:** 4-azidobutanoic acid
 
@@ -14,7 +14,7 @@
 
 7. **Picture:**
 
-![Structure of 4-azidobutanoic acid](../../data/raw/structures/AZB_001.png)
+![Structure of 4-azidobutanoic acid](../../data/raw/structures/AZB.png)
 
 ## Source
 
