@@ -6,7 +6,7 @@
 
 3. **Molecular formula:** C11H20N4O3
 
-4. **SMILES:** [C@H]1(C[C@H](CN1C(CCCCCN=[N+]=[N-])=O)O[H])CO[H]
+4. **SMILES:** `[C@H]1(C[C@H](CN1C(CCCCCN=[N+]=[N-])=O)O[H])CO[H]`
 
 5. **Molecular weight:** 256.30 g/mol
 
