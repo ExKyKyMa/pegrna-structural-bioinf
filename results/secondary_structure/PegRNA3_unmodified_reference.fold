@@ -1,0 +1,6 @@
+>PegRNA3_unmodified_reference|architecture=S-F1-F2-E-V|linkers=none|PBS=unknown|RTT=unknown
+ACAGGGUGUGGCAGAAGCUUUUAGAGCUAGAAAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGCGUGCGUCUUUCCUGGUGCUUCUGCCACACGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA
+...(.(((((((((((((..((((.((((....))))(((((...((((.(......).)))).)))))((((..((.((((((...))))))..))...)))))))).))))))))))))).).......(((((((............))))))). (-52.00)
+,{.(.(((((((((((((..((((.((((....)))){((((...(((({(.....,).)))).))))}{{{{..((,((((((...)))))).,))...)})))))).))))))))))))).).,,....(((((((............))))))). [-54.91]
+...(.(((((((((((((..((((.((((....))))(((((...((((..........)))).)))))(((...((.((((((...))))))..))....))))))).))))))))))))).).......(((((((............))))))). {-48.80 d=14.66}
+ frequency of mfe structure in ensemble 0.0089435; ensemble diversity 21.92 

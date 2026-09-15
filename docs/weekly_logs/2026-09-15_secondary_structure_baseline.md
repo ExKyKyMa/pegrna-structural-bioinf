@@ -37,3 +37,26 @@ structural analysis.
 ## Next step
 
 Run RNAfold for the unmodified nucleotide-level reference sequence.
+
+## RNAfold output
+
+- Sequence length: 158 nt
+- MFE structure energy: -52.00 kcal/mol
+- Ensemble free energy: -54.91 kcal/mol
+- Centroid structure energy: -48.80 kcal/mol
+- Centroid-to-ensemble base-pair distance: 14.66
+
+## Interpretation
+
+The MFE structure is not expected to represent the entire structural
+ensemble. The ensemble free energy is more favorable than the MFE
+structure energy because it includes contributions from alternative
+secondary structures.
+
+The centroid structure represents a structure that is close to the
+Boltzmann-weighted ensemble by base-pair distance. The value d=14.66
+is a base-pair distance measure, not a physical distance in angstroms
+or nanometers.
+
+These global values are baseline descriptors. Local analysis of the
+scaffold, linker junctions, extension and Evopreq1 is still required.
