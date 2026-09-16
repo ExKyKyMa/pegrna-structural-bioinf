@@ -1,0 +1,3 @@
+>PegRNA3_unmodified_reference
+ACAGGGUGUGGCAGAAGCUUUUAGAGCUAGAAAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGCGUGCGUCUUUCCUGGUGCUUCUGCCACACGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA
+...(.(((((((((((((..((((.((((....))))(((((...((((.(......).)))).)))))((((..((.((((((...))))))..))...)))))))).))))))))))))).).......(((((((............))))))).
