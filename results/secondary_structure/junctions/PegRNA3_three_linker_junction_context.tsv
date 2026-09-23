@@ -1,0 +1,25 @@
+construct	junction	position	base	region	side	mfe_partner	mfe_paired	total_pairing_probability	top_partners
+three_linker	35/36	32	U	Scaffold_fragment_1	left	39	True	0.9469	39:0.947
+three_linker	35/36	33	A	Scaffold_fragment_1	left	38	True	0.9228	38:0.912; 26:0.011
+three_linker	35/36	34	G	Scaffold_fragment_1	left	0	False	0.011	25:0.011
+three_linker	35/36	35	A	Scaffold_fragment_1	left	0	False	0.0107	24:0.011
+three_linker	35/36	36	A	Scaffold_fragment_2	right	0	False	0.0	
+three_linker	35/36	37	A	Scaffold_fragment_2	right	0	False	0.0	
+three_linker	35/36	38	U	Scaffold_fragment_2	right	33	True	0.9119	33:0.912
+three_linker	35/36	39	A	Scaffold_fragment_2	right	32	True	0.9469	32:0.947
+three_linker	77/78	74	G	Scaffold_fragment_2	left	0	False	0.1429	41:0.085; 104:0.038; 68:0.020
+three_linker	77/78	75	A	Scaffold_fragment_2	left	0	False	0.0538	103:0.037; 67:0.017
+three_linker	77/78	76	A	Scaffold_fragment_2	left	0	False	0.0295	102:0.029
+three_linker	77/78	77	A	Scaffold_fragment_2	left	0	False	0.1493	103:0.129; 101:0.021
+three_linker	77/78	78	A	Scaffold_fragment_2	right	73	True	0.7752	73:0.611; 102:0.164
+three_linker	77/78	79	A	Scaffold_fragment_2	right	72	True	0.8119	72:0.634; 101:0.178
+three_linker	77/78	80	G	Scaffold_fragment_2	right	71	True	0.8153	71:0.637; 100:0.178
+three_linker	77/78	81	U	Scaffold_fragment_2	right	70	True	0.6103	70:0.508; 69:0.103
+three_linker	121/122	118	C	Extension	left	10	True	1.0	10:1.000
+three_linker	121/122	119	A	Extension	left	9	True	0.9996	9:1.000
+three_linker	121/122	120	C	Extension	left	8	True	0.9999	8:1.000
+three_linker	121/122	121	A	Extension	left	7	True	0.9976	7:0.998
+three_linker	121/122	122	C	Evopreq1	right	6	True	0.9971	6:0.997
+three_linker	121/122	123	G	Evopreq1	right	0	False	0.0	
+three_linker	121/122	124	C	Evopreq1	right	4	True	0.9455	4:0.946
+three_linker	121/122	125	G	Evopreq1	right	0	False	0.0599	2:0.060
