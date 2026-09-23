@@ -185,3 +185,104 @@ DNA strand, and the scaffold is clamped by SpCas9. Secondary-structure
 prediction should be used as a filter, not as a verdict: sites unpaired
 in both models are safe, sites paired in both models carry real risk,
 and sites that change between models require explicit 3D evaluation.
+
+## Reassessment of junction 121/122: the 3' motif should be structurally autonomous
+
+The 3' motif of PegRNA3, `CGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA`
+(122-158, 37 nt), is exactly **tevopreQ1** (trimmed evopreQ1), the
+prequeuosine1 riboswitch aptamer used as the standard epegRNA 3' motif
+(Nelson et al. 2022). Its purpose is to fold into an autonomous
+structure that blocks 3'->5' exonucleases; any base-pairing with the
+rest of the pegRNA is by definition unwanted.
+
+### Published design intent supports insulating the motif
+
+Nelson et al. inserted an 8-nt linker between the PBS and the motif
+specifically to prevent interference, and developed **pegLIT** to
+search for linker sequences that *minimize* base pairing between the
+linker and the spacer, PBS, template and scaffold. In other words, the
+position 121/122 is precisely the slot where the published design puts a
+deliberately non-interacting spacer element.
+
+A triazole linker is the limiting case of that idea: a non-natural
+backbone cannot base-pair at all, so it is non-interfering by
+construction rather than by sequence optimisation. PegRNA3 currently has
+no nucleotide linker at all between the extension and tevopreQ1, so the
+chemical junction fills a gap rather than creating one.
+
+### The tevopreQ1 stem is unaffected by the junction
+
+Folding 122-158 in isolation and in the full molecule (spacer
+constrained unpaired) gives the **identical** pair set:
+
+```
+122-143, 123-142, 124-141, 125-140, 129-136, 130-135
+```
+
+Only a single cross-boundary pair exists: **121-144** (P = 0.806), an
+extension nucleotide extending the motif stem by one base pair. The
+earlier statement that a linker at 121/122 "breaks the
+extension-to-Evopreq1 stem" was therefore wrong: the linker removes one
+spurious terminal pair and leaves the motif's own fold intact. This
+makes 121/122 a **low-risk, design-consistent** junction.
+
+### The real interference is long-range and a linker cannot block it
+
+In the full molecule the 3' tail of tevopreQ1 is sequestered by the
+scaffold in an 8-bp duplex:
+
+| Motif tail | Scaffold partner | Probability |
+|---|---|---:|
+| 147 A | 65 U | 0.643 |
+| 148 A | 64 U | 0.743 |
+| 149 C | 63 G | 0.762 |
+| 152 A | 60 U | 0.821 |
+| 153 C | 59 G | 0.844 |
+| 154 U | 58 A | 0.844 |
+| 155 A | 57 U | 0.843 |
+| 156 G | 56 C | 0.835 |
+
+Insulating the molecule at 121/122 (folding 1-121 and 122-158 as
+separate chains) removes this duplex and costs 4.8 kcal/mol of
+predicted stability (-32.90 vs -28.10 kcal/mol). However, a triazole
+linker keeps the chain covalently continuous, so it **cannot** prevent
+long-range pairing between positions 56-65 and 147-156. The insulated
+fold is an upper bound on what a chemical junction can achieve, not a
+prediction of it.
+
+### Why this predicted interference is probably overestimated
+
+tevopreQ1 is a **pseudoknotted** aptamer, and ViennaRNA cannot predict
+pseudoknots. In the real fold the 3' tail participates in the pseudoknot
+helix and is unavailable for intermolecular pairing. The scaffold-tail
+duplex predicted above is therefore likely an artifact of a
+pseudoknot-blind model, in the same way the spacer-PBS duplex was an
+artifact of ignoring the target DNA.
+
+### Revised risk ranking
+
+| Junction | Risk | Basis |
+|---|---|---|
+| 35/36 | low | unpaired in both models; sgRNA positive control |
+| 121/122 | low | breaks one spurious pair; matches pegLIT design slot |
+| 77/78 | moderate | 5' side unpaired, 3' side in a P ~ 0.7 helix |
+| 97/98 | high structurally, high value functionally | real SpCas9-recognised stem loop 83-86/94-97; only junction able to block RT over-extension |
+
+### Next analytical step
+
+Model tevopreQ1 with its pseudoknot enforced (for example as hard
+constraints from the preQ1 aptamer secondary structure, or with a
+pseudoknot-capable predictor), then re-fold the remainder of PegRNA3
+with the motif's paired positions constrained. This removes the second
+known artifact and gives the first junction risk estimate that is not
+biased by a pseudoknot-blind model.
+
+## Sources
+
+- Shuto, Y. et al. Structural basis for pegRNA-guided reverse
+  transcription by a prime editor. *Nature* **631**, 224-231 (2024).
+  https://doi.org/10.1038/s41586-024-07497-8
+- Nelson, J. W. et al. Engineered pegRNAs improve prime editing
+  efficiency. *Nat. Biotechnol.* **40**, 402-410 (2022).
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC8930418/
+- pegLIT source code. https://github.com/sshen8/peglit
