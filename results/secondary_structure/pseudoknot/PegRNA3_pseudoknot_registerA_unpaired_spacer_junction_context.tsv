@@ -1,0 +1,33 @@
+junction	position	nucleotide	side	mfe_partner	p_paired	pseudoknot_register	spacer_constrained
+35/36	32	U	5prime		0.3227	A	True
+35/36	33	A	5prime		0.3163	A	True
+35/36	34	G	5prime		0.0729	A	True
+35/36	35	A	5prime		0.0512	A	True
+35/36	36	A	3prime		0.0233	A	True
+35/36	37	A	3prime		0.0107	A	True
+35/36	38	U	3prime		0.3399	A	True
+35/36	39	A	3prime		0.3315	A	True
+77/78	74	G	5prime	41	0.7521	A	True
+77/78	75	A	5prime		0.049	A	True
+77/78	76	A	5prime		0.0375	A	True
+77/78	77	A	5prime	103	0.5113	A	True
+77/78	78	A	3prime	102	0.7645	A	True
+77/78	79	A	3prime	101	0.8113	A	True
+77/78	80	G	3prime	100	0.8605	A	True
+77/78	81	U	3prime		0.2521	A	True
+97/98	94	G	5prime	86	0.9869	A	True
+97/98	95	U	5prime	85	0.9612	A	True
+97/98	96	G	5prime	84	0.9788	A	True
+97/98	97	C	5prime	83	0.98	A	True
+97/98	98	G	3prime		0.1332	A	True
+97/98	99	U	3prime		0.0793	A	True
+97/98	100	C	3prime	80	0.7283	A	True
+97/98	101	U	3prime	79	0.7248	A	True
+121/122	118	C	5prime	107	0.7825	A	True
+121/122	119	A	5prime	106	0.5932	A	True
+121/122	120	C	5prime		0.2928	A	True
+121/122	121	A	5prime		0.0996	A	True
+121/122	122	C	3prime		0.0	A	True
+121/122	123	G	3prime		0.0	A	True
+121/122	124	C	3prime		0.0	A	True
+121/122	125	G	3prime		0.0	A	True

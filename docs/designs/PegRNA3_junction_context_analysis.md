@@ -286,3 +286,8 @@ biased by a pseudoknot-blind model.
   efficiency. *Nat. Biotechnol.* **40**, 402-410 (2022).
   https://pmc.ncbi.nlm.nih.gov/articles/PMC8930418/
 - pegLIT source code. https://github.com/sshen8/peglit
+
+> **Update (pseudoknot-constrained model).** The scaffold-to-3'-tail duplex
+> described above does not survive once the tevopreQ1 pseudoknot is enforced.
+> See `PegRNA3_pseudoknot_constrained_analysis.md`, which supersedes this
+> section: junction 121/122 becomes the lowest-risk junction in the molecule.
