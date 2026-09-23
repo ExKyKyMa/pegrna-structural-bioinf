@@ -11,18 +11,18 @@
 ## Results
 
 - Most frequent sampled structure: MFE structure
-- Frequency of most frequent structure: 0.0098
-- MFE frequency from RNAfold: 0.0089435
-- Ensemble diversity from RNAfold: 21.92
-- MFE–ensemble free-energy gap: 2.91 kcal/mol
+- Frequency of most frequent structure: 0.0056
+- MFE frequency from RNAfold: 0.0060157
+- Ensemble diversity from RNAfold: 22.59
+- MFE–ensemble free-energy gap: 3.15 kcal/mol
 
 ## Interpretation
 
 The MFE structure is also the most frequently sampled individual
 structure, but its estimated ensemble frequency is only approximately
-1%.
+0.6%.
 
-The first ten sampled structures account for approximately 5.84% of
+The first ten sampled structures account for approximately 3.76% of
 the sampled ensemble. Therefore, no single secondary structure
 dominates the ensemble.
 

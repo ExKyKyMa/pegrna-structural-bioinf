@@ -6,10 +6,10 @@ The PegRNA3 nucleotide sequence was successfully validated.
 
 | Region | Length | Start | End |
 |---|---:|---:|---:|
-| Spacer | 18 | 1 | 18 |
-| Scaffold fragment 1 | 13 | 19 | 31 |
-| Scaffold fragment 2 | 62 | 32 | 93 |
-| Extension | 28 | 94 | 121 |
+| Spacer | 21 | 1 | 21 |
+| Scaffold fragment 1 | 14 | 22 | 35 |
+| Scaffold fragment 2 | 62 | 36 | 97 |
+| Extension | 24 | 98 | 121 |
 | Evopreq1 | 37 | 122 | 158 |
 
 ## Total length
@@ -19,7 +19,7 @@ The PegRNA3 nucleotide sequence was successfully validated.
 ## Architecture
 
 ```text
-S(1–18)–F1(19–31)–F2(32–93)–E(94–121)–V(122–158)
+S(1–21)–F1(22–35)–F2(36–97)–E(98–121)–V(122–158)
 ```
 
 ## Interpretation
@@ -41,10 +41,10 @@ Run RNAfold for the unmodified nucleotide-level reference sequence.
 ## RNAfold output
 
 - Sequence length: 158 nt
-- MFE structure energy: -52.00 kcal/mol
-- Ensemble free energy: -54.91 kcal/mol
-- Centroid structure energy: -48.80 kcal/mol
-- Centroid-to-ensemble base-pair distance: 14.66
+- MFE structure energy: -54.30 kcal/mol
+- Ensemble free energy: -57.45 kcal/mol
+- Centroid structure energy: -51.30 kcal/mol
+- Centroid-to-ensemble base-pair distance: 15.60
 
 ## Interpretation
 
@@ -54,7 +54,7 @@ structure energy because it includes contributions from alternative
 secondary structures.
 
 The centroid structure represents a structure that is close to the
-Boltzmann-weighted ensemble by base-pair distance. The value d=14.66
+Boltzmann-weighted ensemble by base-pair distance. The value d=15.60
 is a base-pair distance measure, not a physical distance in angstroms
 or nanometers.
 

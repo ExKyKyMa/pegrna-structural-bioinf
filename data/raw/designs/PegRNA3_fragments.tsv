@@ -1,6 +1,6 @@
 construct_name	fragment_name	order	region	sequence	length	modification_at_terminus	joins_to	structural_role	status	notes
-PegRNA3	Spacer	1	spacer	ACAGGGUGUGGCAGAAGC	unknown	none	Scaffold_fragment_1	Target recognition	confirmed	Sequence supplied by user
-PegRNA3	Scaffold_fragment_1	2	scaffold	UUUUAGAGCUAGA	unknown	3prime_azide	Scaffold_fragment_2 via Linker_1	First scaffold fragment	needs_confirmation	Exact fragment boundary must be checked against synthesis design
+PegRNA3	Spacer	1	spacer	ACAGGGUGUGGCAGAAGCAGC	unknown	none	Scaffold_fragment_1	Target recognition	confirmed	Sequence supplied by user
+PegRNA3	Scaffold_fragment_1	2	scaffold	GUUUUAGAGCUAGA	unknown	3prime_azide	Scaffold_fragment_2 via Linker_1	First scaffold fragment	needs_confirmation	Exact fragment boundary must be checked against synthesis design
 PegRNA3	Scaffold_fragment_2	3	scaffold	AAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGC	unknown	5prime_propargylamine; 3prime_amino	Extension via Linker_2	Second scaffold fragment	needs_confirmation	Exact terminal chemistry must be checked
-PegRNA3	Extension	4	extension	GUGCGUCUUUCCUGGUGCUUCUGCCACA	unknown	5prime_linker_dependent	Evopreq1	pegRNA 3prime extension	confirmed_region_unknown_function	Exact PBS and RTT boundaries are unknown
+PegRNA3	Extension	4	extension	GUCUUUCCUGGUGCUUCUGCCACA	unknown	5prime_linker_dependent	Evopreq1	pegRNA 3prime extension	confirmed_region_unknown_function	Exact PBS and RTT boundaries are unknown
 PegRNA3	Evopreq1	5	protective_3prime_motif	CGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA	unknown	none	none	Protective 3prime structural motif	confirmed	Added to reduce exonuclease degradation

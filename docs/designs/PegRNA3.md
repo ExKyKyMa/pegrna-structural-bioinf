@@ -18,12 +18,12 @@ Spacer–Scaffold fragment 1–Scaffold fragment 2–Extension–Evopreq1
 
 | Component | Sequence or description | Role |
 |---|---|---|
-| Spacer | `ACAGGGUGUGGCAGAAGC` | Target recognition |
-| Scaffold fragment 1 | `UUUUAGAGCUAGA` | First scaffold fragment |
+| Spacer | `ACAGGGUGUGGCAGAAGCAGC` | Target recognition |
+| Scaffold fragment 1 | `GUUUUAGAGCUAGA` | First scaffold fragment |
 | Linker 1 | 3′-azide–propargylamine–C(O)– | Chemical junction 1 |
 | Scaffold fragment 2 | `AAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGC` | Second scaffold fragment |
 | Linker 2 | 3′-amino–azidobutanoic-acid–propargylamine–C(O)– | Chemical junction 2 |
-| Extension | `GUGCGUCUUUCCUGGUGCUUCUGCCACA` | PBS/RTT-containing region; boundaries unknown |
+| Extension | `GUCUUUCCUGGUGCUUCUGCCACA` | PBS/RTT-containing region; boundaries unknown |
 | Evopreq1 | `CGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA` | Protective 3′ motif against exonuclease degradation |
 
 ## PBS and RTT annotation
@@ -80,31 +80,40 @@ construction and topology preparation.
 
 ## Initial folding observation
 
-The nucleotide-level reference model predicts stable base-pairing near
-both intended linker junctions.
+The nucleotide-level reference model (158 nt, MFE = -54.30 kcal/mol)
+predicts base-pairing near both intended linker junctions.
+
+Region coordinates in the full sequence:
+
+| Region | Start | End | Length |
+|---|---:|---:|---:|
+| Spacer | 1 | 21 | 21 |
+| Scaffold fragment 1 | 22 | 35 | 14 |
+| Scaffold fragment 2 | 36 | 97 | 62 |
+| Extension | 98 | 121 | 24 |
+| Evopreq1 | 122 | 158 | 37 |
+
+Junction 1 is located between positions 35 and 36.
+Junction 2 is located between positions 97 and 98.
 
 For Junction 1, high-probability pairs include:
 
-- 26–37: 0.8297
-- 27–36: 0.8576
-- 28–35: 0.8548
-- 29–34: 0.8231
+- 32-39: 0.9469
+- 33-38: 0.9119
 
 For Junction 2, the scaffold stem remains highly probable near the
 junction:
 
-- 79–93: 0.9962
-- 80–92: 0.9987
-- 81–91: 0.9984
-- 82–90: 0.9988
-- 83–89: 0.9986
-- 84–88: 0.8739
+- 83-97: 0.9877
+- 84-96: 0.9968
+- 85-95: 0.9966
+- 86-94: 0.9970
 
-Moderate-probability interactions between Scaffold_fragment_2 and the
+Moderate-probability interactions between Scaffold_fragment_1 and the
 Extension were also detected:
 
-- 76–97: 0.7226
-- 77–96: 0.7159
+- 27-101: 0.3658
+- 28-100: 0.3762
 
 ## Interpretation
 

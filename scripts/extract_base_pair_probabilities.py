@@ -13,16 +13,16 @@ OUTPUT_TABLE = Path(
 )
 
 REGIONS = [
-    ("Spacer", 1, 18),
-    ("Scaffold_fragment_1", 19, 31),
-    ("Scaffold_fragment_2", 32, 93),
-    ("Extension", 94, 121),
+    ("Spacer", 1, 21),
+    ("Scaffold_fragment_1", 22, 35),
+    ("Scaffold_fragment_2", 36, 97),
+    ("Extension", 98, 121),
     ("Evopreq1", 122, 158),
 ]
 
 JUNCTION_REGIONS = {
-    "Junction_1": (25, 38),
-    "Junction_2": (87, 100),
+    "Junction_1": (29, 42),
+    "Junction_2": (91, 104),
 }
 
 

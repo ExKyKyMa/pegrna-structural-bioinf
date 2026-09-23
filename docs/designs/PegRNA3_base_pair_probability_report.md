@@ -12,10 +12,10 @@
 
 | Region | Start | End |
 |---|---:|---:|
-| Spacer | 1 | 18 |
-| Scaffold fragment 1 | 19 | 31 |
-| Scaffold fragment 2 | 32 | 93 |
-| Extension | 94 | 121 |
+| Spacer | 1 | 21 |
+| Scaffold fragment 1 | 22 | 35 |
+| Scaffold fragment 2 | 36 | 97 |
+| Extension | 98 | 121 |
 | Evopreq1 | 122 | 158 |
 
 ## Interpretation rules
@@ -27,18 +27,25 @@
 
 ## Results
 
-- MFE: -52.00 kcal/mol
-- Ensemble free energy: -54.91 kcal/mol
-- MFE frequency: 0.0089435
-- Ensemble diversity: 21.92
+- MFE: -54.30 kcal/mol
+- Ensemble free energy: -57.45 kcal/mol
+- MFE frequency: 0.0060157
+- Ensemble diversity: 22.59
 
 ## Main observations
 
-- Scaffold high-confidence pairs: pending
-- Evopreq1 high-confidence pairs: pending
-- Extension–Evopreq1 pairs: pending
-- Potentially unpaired linker junction 1: positions 31/32
-- Potentially unpaired linker junction 2: positions 93/94
+- High-confidence (p >= 0.80) pairs by region pair:
+  - Spacer–Extension: 14
+  - Evopreq1–Evopreq1: 7
+  - Scaffold fragment 2–Scaffold fragment 2: 6
+  - Scaffold fragment 1–Scaffold fragment 2: 4
+  - Spacer–Evopreq1: 2
+- Linker junction 1: positions 35/36. Nucleotide 35 itself is essentially
+  unpaired, but the flanking pairs 32-39 (0.9469) and 33-38 (0.9119)
+  close a hairpin across the junction.
+- Linker junction 2: positions 97/98. Nucleotide 97 is paired with
+  position 83 (0.9877) inside the scaffold stem; the first extension
+  nucleotides (98-101) show only moderate pairing (<= 0.38).
 
 ## Next step
 
