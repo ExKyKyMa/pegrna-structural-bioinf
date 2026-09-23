@@ -4,6 +4,8 @@ import pandas as pd
 
 
 INPUT_FILE = Path("data/raw/designs/PegRNA3_fragments.tsv")
+REGIONS_FILE = Path("data/raw/designs/PegRNA3_regions.tsv")
+REFERENCE_FASTA = Path("data/raw/sequences/PegRNA3_unmodified_reference.fasta")
 OUTPUT_FILE = Path("data/processed/PegRNA3_sequence_validation.tsv")
 
 
@@ -16,6 +18,83 @@ EXPECTED_ORDER = [
 ]
 
 ALLOWED_SYMBOLS = set("AUGCN")
+
+
+def read_reference():
+    """Read the single source of truth for the PegRNA3 sequence."""
+    lines = REFERENCE_FASTA.read_text().splitlines()
+    return clean_sequence("".join(l for l in lines if l and not l.startswith(">")))
+
+
+def check_against_reference(assembled):
+    """Compare the assembled fragments with the reference character by character.
+
+    Summing fragment lengths is not enough: two compensating errors that keep
+    the total length unchanged pass a length check but change every downstream
+    coordinate. This comparison is the check that would have caught them.
+    """
+    reference = read_reference()
+    if assembled == reference:
+        print(f"Reference check: OK, {len(assembled)} nt identical to "
+              f"{REFERENCE_FASTA}")
+        return True
+
+    print("Reference check: FAILED")
+    print(f"  assembled length {len(assembled)} nt, "
+          f"reference length {len(reference)} nt")
+    for i, (a, b) in enumerate(zip(assembled, reference), start=1):
+        if a != b:
+            print(f"  first difference at position {i}: "
+                  f"assembled {a}, reference {b}")
+            lo, hi = max(0, i - 11), i + 10
+            print(f"  assembled {lo + 1}-{hi}: {assembled[lo:hi]}")
+            print(f"  reference {lo + 1}-{hi}: {reference[lo:hi]}")
+            break
+    return False
+
+
+def check_regions():
+    """Check that every functional region matches the reference at its stated
+    coordinates. This is what verifies the RTT / PBS boundary."""
+    if not REGIONS_FILE.exists():
+        print(f"Region check: skipped, {REGIONS_FILE} not found")
+        return True
+
+    reference = read_reference()
+    regions = pd.read_csv(REGIONS_FILE, sep="\t", dtype=str).fillna("")
+    ok = True
+    print("Region check:")
+    for _, row in regions.iterrows():
+        start, end = int(row["start_nt"]), int(row["end_nt"])
+        expected = clean_sequence(row["sequence"])
+        actual = reference[start - 1:end]
+        stated_length = int(row["length_nt"])
+        problems = []
+        if actual != expected:
+            problems.append(f"sequence mismatch, reference has {actual}")
+        if len(expected) != stated_length:
+            problems.append(f"stated length {stated_length} != {len(expected)}")
+        if end - start + 1 != stated_length:
+            problems.append("coordinates do not match stated length")
+        status = "OK" if not problems else "FAILED: " + "; ".join(problems)
+        print(f"  {row['region']:<20} {start:>4}-{end:<4} "
+              f"{stated_length:>3} nt  {status}")
+        ok = ok and not problems
+
+    covered = sorted(
+        (int(r["start_nt"]), int(r["end_nt"])) for _, r in regions.iterrows()
+    )
+    position = 1
+    for start, end in covered:
+        if start != position:
+            print(f"  gap or overlap in coverage at position {position}")
+            ok = False
+        position = end + 1
+    if position - 1 != len(reference):
+        print(f"  regions cover {position - 1} nt, reference is "
+              f"{len(reference)} nt")
+        ok = False
+    return ok
 
 
 def clean_sequence(sequence):
@@ -104,6 +183,14 @@ def main():
     print()
     print("Assembled sequence:")
     print(assembled_sequence)
+
+    print()
+    reference_ok = check_against_reference(assembled_sequence)
+    print()
+    regions_ok = check_regions()
+
+    if not (reference_ok and regions_ok):
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

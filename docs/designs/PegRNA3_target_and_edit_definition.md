@@ -111,10 +111,11 @@ lengths.
 
 ## Experimentally validated junction positions
 
-The requesting work already established that fragment ligation of a
-plain sgRNA at positions **34/35** and **57/58** does not reduce
-CRISPR/Cas9 activity. Because PegRNA3 shares the spacer and scaffold with
-that sgRNA over positions 1-97, those coordinates transfer directly.
+The requesting work already established that fragment ligation of a plain
+sgRNA at positions **35/36** and **57/58** does not reduce CRISPR/Cas9
+activity. Because PegRNA3 shares the spacer and scaffold with that sgRNA
+over positions 1-97, those coordinates transfer directly. Junction 35/36
+of PegRNA3 is therefore experimentally validated.
 
 Comparison under the current best model (tevopreQ1 pseudoknot enforced,
 spacer constrained unpaired), P(paired) for the two nucleotides on each
@@ -122,35 +123,41 @@ side of the cut:
 
 | Junction | 5' side | 3' side | Status |
 |---|---|---|---|
-| 34/35 | 0.073 | 0.051 / 0.023 | **experimentally validated** |
-| 35/36 | 0.051 | 0.023 / 0.011 | currently chosen |
-| **57/58** | **0.059** | **0.140 / 0.117** | **experimentally validated** |
-| 58/59 | 0.140 | 0.117 / 0.088 | — |
-| 77/78 | 0.511 | 0.764 / 0.811 | currently chosen |
+| **35/36** | **0.051** | **0.023 / 0.011** | chosen, **experimentally validated** |
+| 57/58 | 0.059 | 0.140 / 0.117 | experimentally validated, held in reserve |
+| 77/78 | 0.511 | 0.764 / 0.811 | chosen, oligonucleotides already synthesised |
 | 97/98 | 0.980 | 0.133 / 0.079 | blocks RT over-extension |
 | 121/122 | 0.100 | 0.000 / 0.000 | isolates tevopreQ1 |
 
-Two consequences:
+### Decision on 77/78
 
-1. **34/35 and 35/36 are equivalent** by prediction. Since 34/35 is
-   experimentally validated and 35/36 is not, there is no reason to
-   prefer 35/36. Using the validated coordinate costs nothing and gains
-   an experimental precedent.
-2. **57/58 is far better than 77/78** and is experimentally validated.
-   Junction 77/78 sits with its 3' side inside a helix at P = 0.76-0.81,
-   whereas 57/58 has P = 0.06 on the 5' side and 0.12-0.14 on the 3'
-   side. Replacing 77/78 with 57/58 removes the only moderate-risk
-   scaffold junction in the design and replaces it with a position that
-   has already been shown not to impair Cas9.
+Junction 77/78 is kept. Secondary-structure prediction puts its 3' side
+inside a helix at P = 0.76-0.81, which is the highest predicted pairing of
+any chosen junction except 97/98, and 57/58 is both predicted safer
+(P = 0.06 / 0.12-0.14) and experimentally validated. Two arguments
+outweigh that:
 
-Recommended junction set for the multi-fragment construct, pending
-confirmation with the requesting group:
+1. In the three-dimensional structure 77/78 sits in the same kind of loop
+   as 57/58, so the secondary-structure probability overstates the
+   difference between them. A high P(paired) in a 2D prediction does not
+   by itself mean the backbone at that point is conformationally
+   constrained.
+2. The oligonucleotides for 77/78 have already been synthesised.
+
+**57/58 is the designated fallback.** If the 77/78 construct
+underperforms in the ligation or activity assay, the same architecture is
+rebuilt with 57/58 in its place. This is recorded now so that the
+fallback is a pre-registered decision rather than a post-hoc
+rationalisation, which matters for the thesis defence.
+
+Junction set in use:
 
 ```
-34/35  (validated)  +  57/58  (validated)  +  97/98  (blocks RT over-extension)
+35/36 (validated)  +  77/78 (synthesised, 57/58 in reserve)
 ```
 
-with 121/122 as an optional fourth junction if the 3' motif is to be
+with 97/98 as the junction that would additionally block RT
+over-extension, and 121/122 as an optional junction if the 3' motif is
 synthesised separately.
 
 ## Open items

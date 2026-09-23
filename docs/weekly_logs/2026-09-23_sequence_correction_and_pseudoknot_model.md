@@ -173,3 +173,47 @@ distances measured at each junction in the cryo-EM structures
 - Structure and function of preQ1 riboswitches.
   https://pmc.ncbi.nlm.nih.gov/articles/PMC4177978/
 - pegLIT. https://github.com/sshen8/peglit and https://peglit.liugroup.us/
+
+## Addendum: RTT / PBS boundary resolved, target and edit defined
+
+The largest open gap listed above ("the extension is not yet split into
+RTT and PBS") is closed.
+
+The requesting group's design information was recovered and checked
+against [NM_000345.4](https://www.ncbi.nlm.nih.gov/nuccore/NM_000345.4)
+and [NG_011851.1](https://www.ncbi.nlm.nih.gov/nuccore/NG_011851.1). The
+spacer matches SNCA c.69-c.89 on the coding strand, the PAM is `AGG` at
+c.90-c.92, protospacer and PAM are contiguous in genomic DNA, and the
+canonical SpCas9 nick falls between c.86 and c.87. Reconstructing reverse
+transcription from that primer gives `ACCAGGAAAGAC` against the genomic
+`AGCAGGAAAGAC` over c.87-c.98: a single change c.88G>C, codon 30 `GCA` to
+`CCA`, p.Ala30Pro. The construct installs A30P rather than correcting it.
+
+The boundary is **RTT 98-109 (12 nt) + PBS 110-121 (12 nt)**, not 11+13.
+Position 109 is the first templating nucleotide, not part of the primer
+duplex, and a 13-nt PBS would need a non-canonical nick 2 nt from the PAM.
+Both splits encode the same edit, so only the annotation was wrong.
+
+Recorded in `data/raw/designs/PegRNA3_regions.tsv` and
+`PegRNA3_target_edit.tsv`, with the derivation in
+[PegRNA3_target_and_edit_definition.md](../designs/PegRNA3_target_and_edit_definition.md).
+
+`scripts/check_pegrna_design.py` now does what the earlier length check
+failed to do: it compares the assembled fragments with the reference FASTA
+character by character and verifies every region against the reference at
+its stated coordinates. Both compensating-error classes seen in this
+project would now fail the check.
+
+## Addendum: sgRNA control is already experimental
+
+Ligation of a plain sgRNA at positions **35/36** and **57/58** was already
+shown not to reduce CRISPR/Cas9 activity. The roadmap had this listed as
+work still to do; it is done, and it applies directly to PegRNA3 because
+positions 1-97 are shared. Junction 35/36 of PegRNA3 is therefore
+experimentally validated, which is a substantially stronger position than
+a prediction-only justification.
+
+Junction 77/78 is kept despite its predicted P(paired) = 0.76-0.81 on the
+3' side: in three dimensions it occupies the same kind of loop as 57/58,
+and its oligonucleotides are already synthesised. **57/58 is the
+pre-registered fallback** if 77/78 underperforms.

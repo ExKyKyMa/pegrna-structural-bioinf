@@ -31,12 +31,15 @@ Small, cheap, and blocking everything downstream.
 
 - [ ] Rename `Evopreq1` to `tevopreQ1` across data files and docs, with a
       note recording the old name.
-- [ ] **Split the extension (98-121) into RTT and PBS.** Right now the
-      filenames literally read `PBS=unknown RTT=unknown`. Without this
-      there is no defined edit, no target locus, and no way to discuss
-      editing efficiency. This is the largest single gap in the project.
-- [ ] Record the target genomic site and the intended edit in
-      `data/raw/designs/`.
+- [x] **Split the extension (98-121) into RTT and PBS.** Done 2026-09-23:
+      RTT = 98-109 (12 nt), PBS = 110-121 (12 nt). The 11+13 split
+      recorded earlier was off by one; position 109 is the first
+      templating nucleotide, not part of the primer duplex.
+- [x] Record the target genomic site and the intended edit in
+      `data/raw/designs/`. Done: `PegRNA3_regions.tsv` and
+      `PegRNA3_target_edit.tsv`. SNCA protospacer c.69-c.89, PAM AGG at
+      c.90-c.92, nick c.86/c.87, edit c.88G>C = p.A30P (installed, not
+      corrected — still to be confirmed with the requesting group).
 - [ ] Add a GitHub Actions workflow running `scripts/check_pegrna_design.py`
       on every push, so a sequence error like the one found this week
       cannot survive a commit again.

@@ -1,0 +1,17 @@
+field	value	source
+gene	SNCA	supplied by requesting group
+transcript_reference	NM_000345.4	https://www.ncbi.nlm.nih.gov/nuccore/NM_000345.4
+genomic_reference	NG_011851.1	https://www.ncbi.nlm.nih.gov/nuccore/NG_011851.1
+protospacer	c.69-c.89 ACAGGGTGTGGCAGAAGCAGC	verified
+protospacer_strand	coding (sense)	verified
+pam	c.90-c.92 AGG	verified
+protospacer_pam_contiguous_in_genome	yes	verified against NG_011851.1
+spcas9_nick	between c.86 and c.87 on the PAM strand	3 nt from the PAM, canonical
+edit	c.88G>C	verified by reconstructing reverse transcription
+codon	codon 30, GCA to CCA	verified
+protein_consequence	p.Ala30Pro (A30P)	verified
+edit_direction	installs A30P; does not correct it	NEEDS CONFIRMATION with the requesting group
+edit_distance_from_nick	+2	verified
+homology_3prime_of_edit	10 nt (c.89-c.98)	verified; at the low end of the usual range
+pam_disrupted_by_edit	no	verified
+reediting_of_edited_allele	reduced; edit lies 2 nt from the PAM inside the protospacer	interpretation

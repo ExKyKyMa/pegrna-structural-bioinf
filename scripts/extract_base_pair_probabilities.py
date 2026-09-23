@@ -16,7 +16,8 @@ REGIONS = [
     ("Spacer", 1, 21),
     ("Scaffold_fragment_1", 22, 35),
     ("Scaffold_fragment_2", 36, 97),
-    ("Extension", 98, 121),
+    ("RTT", 98, 109),
+    ("PBS", 110, 121),
     ("Evopreq1", 122, 158),
 ]
 

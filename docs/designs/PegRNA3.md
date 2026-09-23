@@ -23,16 +23,34 @@ Spacer–Scaffold fragment 1–Scaffold fragment 2–Extension–Evopreq1
 | Linker 1 | 3′-azide–propargylamine–C(O)– | Chemical junction 1 |
 | Scaffold fragment 2 | `AAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGC` | Second scaffold fragment |
 | Linker 2 | 3′-amino–azidobutanoic-acid–propargylamine–C(O)– | Chemical junction 2 |
-| Extension | `GUCUUUCCUGGUGCUUCUGCCACA` | PBS/RTT-containing region; boundaries unknown |
+| Extension | `GUCUUUCCUGGUGCUUCUGCCACA` | RTT (98–109) + PBS (110–121) |
 | Evopreq1 | `CGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA` | Protective 3′ motif against exonuclease degradation |
 
 ## PBS and RTT annotation
 
-The exact PBS and RTT boundaries are currently unknown because the
-original target sequence and pegRNA design parameters are unavailable.
+Resolved 2026-09-23. The boundary is 12 + 12:
 
-For the initial structural analysis, the full extension is treated as
-one region.
+| Region | Positions | Length | Sequence | Role |
+|---|---|---:|---|---|
+| RTT | 98–109 | 12 | `GUCUUUCCUGGU` | templates SNCA c.87–c.98 |
+| PBS | 110–121 | 12 | `GCUUCUGCCACA` | anneals to SNCA c.75–c.86 |
+
+An earlier working note recorded 11 + 13 (RTT 98–108, PBS 109–121). That
+is off by one: position 109 (`U`) pairs with nothing in the primer
+duplex, it is the first templating nucleotide. A 13-nt PBS would require
+an SpCas9 nick 2 nt from the PAM instead of the canonical 3 nt. Both
+splits encode the same edit, so the construct is correct and only the
+annotation was wrong.
+
+The target site and the intended edit (SNCA, protospacer c.69–c.89, PAM
+`AGG` at c.90–c.92, nick between c.86 and c.87, edit c.88G>C =
+p.Ala30Pro) are derived and verified in
+[PegRNA3_target_and_edit_definition.md](PegRNA3_target_and_edit_definition.md)
+and recorded in `data/raw/designs/PegRNA3_regions.tsv` and
+`data/raw/designs/PegRNA3_target_edit.tsv`.
+
+Run `python3 scripts/check_pegrna_design.py` to verify that every region
+matches the reference FASTA at its stated coordinates.
 
 ## Structural hypothesis
 

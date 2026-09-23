@@ -1,0 +1,7 @@
+region	start_nt	end_nt	length_nt	sequence	function	target_mapping	status	source
+Spacer	1	21	21	ACAGGGUGUGGCAGAAGCAGC	Target recognition	SNCA protospacer c.69-c.89, coding strand, PAM AGG at c.90-c.92	confirmed	supplied by requesting group; verified against NM_000345.4 and NG_011851.1
+Scaffold_fragment_1	22	35	14	GUUUUAGAGCUAGA	SpCas9 scaffold, 5prime part	none	confirmed	canonical SpCas9 scaffold
+Scaffold_fragment_2	36	97	62	AAUAGCAAGUUAAAAUAAGGCUAGUCCGUUAUCAACUUGAAAAAGUGGCACCGAGUCGGUGC	SpCas9 scaffold, 3prime part; bound by SpCas9 over G21-C96	none	confirmed	canonical SpCas9 scaffold
+RTT	98	109	12	GUCUUUCCUGGU	Reverse transcription template	templates SNCA c.87-c.98; encodes c.88G>C (codon 30 GCA to CCA, p.A30P)	confirmed	derived from the construct and verified against NM_000345.4
+PBS	110	121	12	GCUUCUGCCACA	Primer binding site	anneals to SNCA c.75-c.86; SpCas9 nick between c.86 and c.87	confirmed	derived from the construct and verified against NM_000345.4
+tevopreQ1	122	158	37	CGCGGUUCUAUCUAGUUACGCGUUAAACCAACUAGAA	Protective 3prime pseudoknot motif	none	confirmed	trimmed evopreQ1, Nelson et al. 2022; repository label Evopreq1 retained for now
