@@ -3,6 +3,7 @@
 Usage:
     python scripts/analyze_junction_neighborhood.py 35 77 121
     python scripts/analyze_junction_neighborhood.py 35 97 --label two_linker
+    python scripts/analyze_junction_neighborhood.py 35 77 121 --unpaired-spacer
 
 A junction given as N means "the linker is inserted between nucleotide N
 and nucleotide N+1" in the full-length PegRNA3 numbering (1-based).
@@ -35,6 +36,8 @@ REGIONS = [
 ]
 
 WINDOW = 4  # nucleotides inspected on each side of a junction
+
+SPACER_RANGE = (1, 21)  # positions forced unpaired by --unpaired-spacer
 
 
 def read_fasta(path):
@@ -71,10 +74,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("junctions", nargs="+", type=int)
     parser.add_argument("--label", default=None)
+    parser.add_argument(
+        "--unpaired-spacer",
+        action="store_true",
+        help=(
+            "Force the spacer (positions "
+            f"{SPACER_RANGE[0]}-{SPACER_RANGE[1]}) to stay unpaired. "
+            "In the assembled prime editor the spacer is hybridised to "
+            "the target DNA strand, so its intramolecular pairing with "
+            "the PBS region seen in free-RNA folding is an artifact."
+        ),
+    )
     args = parser.parse_args()
 
     junctions = sorted(args.junctions)
     label = args.label or f"{len(junctions)}_linker"
+
+    if args.unpaired_spacer:
+        label = f"{label}_unpaired_spacer"
 
     sequence = read_fasta(FASTA)
     print(f"Sequence: {len(sequence)} nt from {FASTA}")
@@ -82,6 +99,19 @@ def main():
     model = RNA.md()
     model.temperature = 37.0
     fold_compound = RNA.fold_compound(sequence, model)
+
+    if args.unpaired_spacer:
+        for position in range(SPACER_RANGE[0], SPACER_RANGE[1] + 1):
+            fold_compound.hc_add_up(
+                position,
+                RNA.CONSTRAINT_CONTEXT_ALL_LOOPS,
+            )
+        print(
+            f"Hard constraint: positions "
+            f"{SPACER_RANGE[0]}-{SPACER_RANGE[1]} forced unpaired"
+        )
+    else:
+        print("No constraints: free-RNA folding")
 
     mfe_structure, mfe = fold_compound.mfe()
     fold_compound.exp_params_rescale(mfe)
@@ -92,6 +122,7 @@ def main():
 
     print(f"MFE: {mfe:.2f} kcal/mol")
     print(f"Ensemble free energy: {ensemble_energy:.2f} kcal/mol")
+    print(f"MFE structure:\n{mfe_structure}")
 
     rows = []
 
@@ -119,6 +150,7 @@ def main():
 
             rows.append({
                 "construct": label,
+                "spacer_constrained": bool(args.unpaired_spacer),
                 "junction": f"{junction}/{junction + 1}",
                 "position": position,
                 "base": sequence[position - 1],

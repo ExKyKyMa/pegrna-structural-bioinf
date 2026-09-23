@@ -1,0 +1,17 @@
+construct	spacer_constrained	junction	position	base	region	side	mfe_partner	mfe_paired	total_pairing_probability	top_partners
+two_linker_unpaired_spacer	True	35/36	32	U	Scaffold_fragment_1	left	39	True	0.9799	39:0.945; 125:0.035
+two_linker_unpaired_spacer	True	35/36	33	A	Scaffold_fragment_1	left	38	True	0.9105	38:0.910
+two_linker_unpaired_spacer	True	35/36	34	G	Scaffold_fragment_1	left	0	False	0.0	
+two_linker_unpaired_spacer	True	35/36	35	A	Scaffold_fragment_1	left	0	False	0.0	
+two_linker_unpaired_spacer	True	35/36	36	A	Scaffold_fragment_2	right	0	False	0.0	
+two_linker_unpaired_spacer	True	35/36	37	A	Scaffold_fragment_2	right	0	False	0.0	
+two_linker_unpaired_spacer	True	35/36	38	U	Scaffold_fragment_2	right	33	True	0.9105	33:0.910
+two_linker_unpaired_spacer	True	35/36	39	A	Scaffold_fragment_2	right	32	True	0.9453	32:0.945
+two_linker_unpaired_spacer	True	97/98	94	G	Scaffold_fragment_2	left	86	True	0.9841	86:0.984
+two_linker_unpaired_spacer	True	97/98	95	U	Scaffold_fragment_2	left	85	True	0.9804	85:0.980
+two_linker_unpaired_spacer	True	97/98	96	G	Scaffold_fragment_2	left	84	True	0.9854	84:0.974; 111:0.012
+two_linker_unpaired_spacer	True	97/98	97	C	Scaffold_fragment_2	left	83	True	0.9764	83:0.965; 110:0.012
+two_linker_unpaired_spacer	True	97/98	98	G	Extension	right	0	False	0.0541	104:0.022; 105:0.021; 109:0.011
+two_linker_unpaired_spacer	True	97/98	99	U	Extension	right	0	False	0.0113	108:0.011
+two_linker_unpaired_spacer	True	97/98	100	C	Extension	right	0	False	0.2344	80:0.200; 107:0.035
+two_linker_unpaired_spacer	True	97/98	101	U	Extension	right	0	False	0.2204	79:0.199; 77:0.021

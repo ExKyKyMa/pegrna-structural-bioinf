@@ -1,0 +1,25 @@
+construct	spacer_constrained	junction	position	base	region	side	mfe_partner	mfe_paired	total_pairing_probability	top_partners
+three_linker_unpaired_spacer	True	35/36	32	U	Scaffold_fragment_1	left	39	True	0.9799	39:0.945; 125:0.035
+three_linker_unpaired_spacer	True	35/36	33	A	Scaffold_fragment_1	left	38	True	0.9105	38:0.910
+three_linker_unpaired_spacer	True	35/36	34	G	Scaffold_fragment_1	left	0	False	0.0	
+three_linker_unpaired_spacer	True	35/36	35	A	Scaffold_fragment_1	left	0	False	0.0	
+three_linker_unpaired_spacer	True	35/36	36	A	Scaffold_fragment_2	right	0	False	0.0	
+three_linker_unpaired_spacer	True	35/36	37	A	Scaffold_fragment_2	right	0	False	0.0	
+three_linker_unpaired_spacer	True	35/36	38	U	Scaffold_fragment_2	right	33	True	0.9105	33:0.910
+three_linker_unpaired_spacer	True	35/36	39	A	Scaffold_fragment_2	right	32	True	0.9453	32:0.945
+three_linker_unpaired_spacer	True	77/78	74	G	Scaffold_fragment_2	left	0	False	0.1671	68:0.073; 41:0.054; 104:0.039
+three_linker_unpaired_spacer	True	77/78	75	A	Scaffold_fragment_2	left	0	False	0.1023	67:0.064; 103:0.038
+three_linker_unpaired_spacer	True	77/78	76	A	Scaffold_fragment_2	left	0	False	0.0306	102:0.031
+three_linker_unpaired_spacer	True	77/78	77	A	Scaffold_fragment_2	left	0	False	0.1666	103:0.145; 101:0.021
+three_linker_unpaired_spacer	True	77/78	78	A	Scaffold_fragment_2	right	73	True	0.87	73:0.686; 102:0.184
+three_linker_unpaired_spacer	True	77/78	79	A	Scaffold_fragment_2	right	72	True	0.9107	72:0.712; 101:0.199
+three_linker_unpaired_spacer	True	77/78	80	G	Scaffold_fragment_2	right	71	True	0.93	71:0.715; 100:0.200; 120:0.016
+three_linker_unpaired_spacer	True	77/78	81	U	Scaffold_fragment_2	right	70	True	0.7013	70:0.566; 69:0.119; 119:0.016
+three_linker_unpaired_spacer	True	121/122	118	C	Extension	left	107	True	0.8232	107:0.697; 110:0.076; 108:0.022
+three_linker_unpaired_spacer	True	121/122	119	A	Extension	left	106	True	0.7052	106:0.545; 109:0.144; 81:0.016
+three_linker_unpaired_spacer	True	121/122	120	C	Extension	left	0	False	0.2149	108:0.144; 107:0.055; 80:0.016
+three_linker_unpaired_spacer	True	121/122	121	A	Extension	left	144	True	0.8268	144:0.806; 106:0.021
+three_linker_unpaired_spacer	True	121/122	122	C	Evopreq1	right	143	True	0.9382	143:0.938
+three_linker_unpaired_spacer	True	121/122	123	G	Evopreq1	right	142	True	0.9451	142:0.945
+three_linker_unpaired_spacer	True	121/122	124	C	Evopreq1	right	141	True	0.9451	141:0.945
+three_linker_unpaired_spacer	True	121/122	125	G	Evopreq1	right	140	True	0.9721	140:0.937; 32:0.035

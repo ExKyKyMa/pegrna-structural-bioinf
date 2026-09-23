@@ -107,3 +107,81 @@ Recommended follow-up designs:
 Shuto, Y. et al. Structural basis for pegRNA-guided reverse
 transcription by a prime editor. *Nature* **631**, 224-231 (2024).
 https://doi.org/10.1038/s41586-024-07497-8
+
+## Spacer-constrained refolding
+
+The free-RNA fold above lets the spacer (1-21) base-pair
+intramolecularly with the PBS region. In the assembled prime editor the
+spacer is hybridised to the target DNA strand, so this pairing cannot
+occur. The analysis was therefore repeated with the spacer forced
+unpaired:
+
+```bash
+python3 scripts/analyze_junction_neighborhood.py 35 77 121 \
+    --label three_linker --unpaired-spacer
+python3 scripts/analyze_junction_neighborhood.py 35 97 \
+    --label two_linker --unpaired-spacer
+```
+
+Removing the artifact costs 21.4 kcal/mol of spurious stability:
+
+| Model | MFE | Ensemble free energy |
+|---|---:|---:|
+| Free RNA | -54.30 | -57.45 |
+| Spacer unpaired | -32.90 | -34.86 |
+
+### Junction P(paired) in both models
+
+| Junction | Position | Free RNA | Spacer unpaired | Dominant partner (constrained) |
+|---|---:|---:|---:|---|
+| 35/36 | 34 | 0.011 | 0.000 | – |
+| 35/36 | 35 | 0.011 | 0.000 | – |
+| 35/36 | 36 | 0.000 | 0.000 | – |
+| 35/36 | 37 | 0.000 | 0.000 | – |
+| 77/78 | 76 | 0.029 | 0.031 | 102 (0.031) |
+| 77/78 | 77 | 0.149 | 0.167 | 103 (0.145) |
+| 77/78 | 78 | 0.775 | 0.870 | 73 (0.686) |
+| 77/78 | 79 | 0.812 | 0.911 | 72 (0.712) |
+| 97/98 | 96 | 0.997 | 0.985 | 84 (0.974) |
+| 97/98 | 97 | 0.988 | 0.976 | 83 (0.965) |
+| 97/98 | 98 | 0.201 | 0.054 | 104 (0.022) |
+| 121/122 | 120 | 1.000 | 0.215 | 108 (0.144) |
+| 121/122 | 121 | 0.998 | 0.827 | 144 (0.806) |
+| 121/122 | 122 | 0.997 | 0.938 | 143 (0.938) |
+| 121/122 | 123 | 0.000 | 0.945 | 142 (0.945) |
+
+### Revised conclusions
+
+1. **35/36 is robustly unpaired.** P(paired) drops to 0.000 in the
+   constrained model. The conclusion does not depend on the folding
+   model, which agrees with the experimentally tolerated sgRNA junction
+   34/35.
+
+2. **97/98 is model-independent and genuinely paired.** The 83-86 /
+   94-97 stem survives the constraint at P = 0.976-0.985, confirming it
+   as a real structural element rather than a folding artifact. It
+   corresponds to the stem loop G82-C96 that SpCas9 recognises directly
+   in the cryo-EM termination structure. Note that the 3′ side of the
+   junction becomes cleaner (98: 0.201 -> 0.054), so the linker strains
+   the stem only from its 5′ side.
+
+3. **121/122 was misdiagnosed as a pure artifact.** The spacer pairs
+   (6-10) disappear as expected, but an extension-Evopreq1 helix takes
+   their place: 121-144 (0.806), 122-143 (0.938), 123-142 (0.945). The
+   junction is therefore paired in both models, only with different
+   partners. A linker here breaks the extension-to-Evopreq1 stem and
+   may compromise the protective function of the 3′ motif.
+
+4. **77/78 becomes slightly worse under the constraint**
+   (78: 0.775 -> 0.870; 79: 0.812 -> 0.911), because the spacer no
+   longer competes for these partners. The break point itself (76-77)
+   stays weakly paired, so the site remains acceptable.
+
+### Caveat
+
+Forcing the spacer unpaired is still only an approximation of the
+protein-bound state. The PBS is also hybridised to the nicked target
+DNA strand, and the scaffold is clamped by SpCas9. Secondary-structure
+prediction should be used as a filter, not as a verdict: sites unpaired
+in both models are safe, sites paired in both models carry real risk,
+and sites that change between models require explicit 3D evaluation.
