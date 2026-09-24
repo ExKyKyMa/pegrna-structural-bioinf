@@ -1,1 +1,17 @@
+# Large derived data file, regenerate with the H-bond analysis instead of
+# committing it.
 data/processed/all_h-bonds_PegRNA
+
+# ChimeraX session files. These are binary archives that embed absolute local
+# paths and the full loaded structure, so they are large, they change
+# completely on every save, and they are not reproducible on another machine.
+# Commit the ChimeraX command script that rebuilds the scene instead.
+*.cxs
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
