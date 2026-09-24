@@ -1,0 +1,88 @@
+position	base	region	reason
+1	A	spacer	spacer, must base pair with the DNA target for recognition
+2	C	spacer	spacer, must base pair with the DNA target for recognition
+3	A	spacer	spacer, must base pair with the DNA target for recognition
+4	G	spacer	spacer, must base pair with the DNA target for recognition
+5	G	spacer	spacer, must base pair with the DNA target for recognition
+6	G	spacer	spacer, must base pair with the DNA target for recognition
+7	U	spacer	spacer, must base pair with the DNA target for recognition
+8	G	spacer	spacer, must base pair with the DNA target for recognition
+9	U	spacer	spacer, must base pair with the DNA target for recognition
+10	G	spacer	spacer, must base pair with the DNA target for recognition
+11	G	spacer	spacer, must base pair with the DNA target for recognition
+12	C	spacer	spacer, must base pair with the DNA target for recognition
+13	A	spacer	spacer, must base pair with the DNA target for recognition
+14	G	spacer	spacer, must base pair with the DNA target for recognition
+15	A	spacer	spacer, must base pair with the DNA target for recognition
+16	A	spacer	spacer, must base pair with the DNA target for recognition
+17	G	spacer	spacer, must base pair with the DNA target for recognition
+18	C	spacer	spacer, must base pair with the DNA target for recognition
+19	A	spacer	spacer, must base pair with the DNA target for recognition
+20	G	spacer	spacer, must base pair with the DNA target for recognition
+21	C	spacer	spacer, must base pair with the DNA target for recognition
+22	G	scaffold	contacts Cas9 in the cryo-EM structure
+23	U	scaffold	contacts Cas9 in the cryo-EM structure
+24	U	scaffold	contacts Cas9 in the cryo-EM structure
+25	U	scaffold	contacts Cas9 in the cryo-EM structure
+26	U	scaffold	contacts Cas9 in the cryo-EM structure
+27	A	scaffold	contacts Cas9 in the cryo-EM structure
+30	G	scaffold	contacts Cas9 in the cryo-EM structure
+31	C	scaffold	contacts Cas9 in the cryo-EM structure
+32	U	scaffold	contacts Cas9 in the cryo-EM structure
+33	A	scaffold	contacts Cas9 in the cryo-EM structure
+38	U	scaffold	contacts Cas9 in the cryo-EM structure
+39	A	scaffold	contacts Cas9 in the cryo-EM structure
+40	G	scaffold	contacts Cas9 in the cryo-EM structure
+41	C	scaffold	contacts Cas9 in the cryo-EM structure
+46	U	scaffold	contacts Cas9 in the cryo-EM structure
+47	A	scaffold	contacts Cas9 in the cryo-EM structure
+48	A	scaffold	contacts Cas9 in the cryo-EM structure
+49	A	scaffold	contacts Cas9 in the cryo-EM structure
+50	A	scaffold	contacts Cas9 in the cryo-EM structure
+51	U	scaffold	contacts Cas9 in the cryo-EM structure
+54	G	scaffold	contacts Cas9 in the cryo-EM structure
+55	G	scaffold	contacts Cas9 in the cryo-EM structure
+56	C	scaffold	contacts Cas9 in the cryo-EM structure
+59	G	scaffold	contacts Cas9 in the cryo-EM structure
+61	C	scaffold	contacts Cas9 in the cryo-EM structure
+62	C	scaffold	contacts Cas9 in the cryo-EM structure
+69	A	scaffold	contacts Cas9 in the cryo-EM structure
+70	A	scaffold	contacts Cas9 in the cryo-EM structure
+71	C	scaffold	contacts Cas9 in the cryo-EM structure
+72	U	scaffold	contacts Cas9 in the cryo-EM structure
+73	U	scaffold	contacts Cas9 in the cryo-EM structure
+78	A	scaffold	contacts Cas9 in the cryo-EM structure
+79	A	scaffold	contacts Cas9 in the cryo-EM structure
+80	G	scaffold	contacts Cas9 in the cryo-EM structure
+81	U	scaffold	contacts Cas9 in the cryo-EM structure
+82	G	scaffold	contacts Cas9 in the cryo-EM structure
+83	G	scaffold	contacts Cas9 in the cryo-EM structure
+84	C	scaffold	contacts Cas9 in the cryo-EM structure
+85	A	scaffold	contacts Cas9 in the cryo-EM structure
+86	C	scaffold	contacts Cas9 in the cryo-EM structure
+87	C	scaffold	contacts Cas9 in the cryo-EM structure
+88	G	scaffold	contacts Cas9 in the cryo-EM structure
+92	C	scaffold	contacts Cas9 in the cryo-EM structure
+93	G	scaffold	contacts Cas9 in the cryo-EM structure
+94	G	scaffold	contacts Cas9 in the cryo-EM structure
+95	U	scaffold	contacts Cas9 in the cryo-EM structure
+96	G	scaffold	contacts Cas9 in the cryo-EM structure
+97	C	scaffold	contacts Cas9 in the cryo-EM structure
+98	G	RTT	RTT, is the template that is copied
+99	U	RTT	RTT, is the template that is copied
+100	C	RTT	RTT, is the template that is copied
+101	U	RTT	RTT, is the template that is copied
+102	U	RTT	RTT, is the template that is copied
+103	U	RTT	RTT, is the template that is copied
+104	C	RTT	RTT, is the template that is copied
+105	C	RTT	RTT, is the template that is copied
+106	U	RTT	RTT, is the template that is copied
+107	G	RTT	RTT, is the template that is copied
+108	G	RTT	RTT, is the template that is copied
+109	U	RTT	RTT, is the template that is copied
+110	G	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates
+111	C	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates
+112	U	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates
+113	U	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates
+114	C	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates
+115	U	PBS	PBS priming region, the DNA 3'-OH anneals here and RT initiates

@@ -1,0 +1,6 @@
+design	barrier	ground_energy	spacer_accessibility	seed_accessibility
+unmodified	32.8	-54.3	0.1971	0.3389
+linkers only	26.2	-47.5	0.3131	0.3391
+modifications only (116, 117, 120)	17.0	-37.5	0.3618	0.3556
+modifications + linkers	17.9	-35.9	0.3156	0.3605
+plain sgRNA, for reference	12.0	-24.3	0.3551	0.9168
